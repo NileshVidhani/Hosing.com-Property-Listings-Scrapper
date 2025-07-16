@@ -1,54 +1,65 @@
-# Indian---Govt---Schemes---Tracker
-A web scraping project that uses BeautifulSoup and Python to gather, arrange, and filter Indian government schemes by department.
+# 🏠 Housing.com Rental Property Scraper
+
+This project is a web scraping application designed to extract **rental property listings** from [Housing.com](https://housing.com). Users can enter any **Indian city** as input, and the scraper fetches property details such as title, price, location, and property link. The data is saved into a structured **CSV file** in the local directory.
+
+---
+
+## 🎯 Objectives
+
+- **Automate Property Data Collection** – Efficiently scrape rental listings from Housing.com.
+- **City-Based Scraping** – Let users input any city name for a dynamic search.
+- **Data Storage** – Save the extracted property data in a clean, structured CSV file.
+- **User-Friendly Execution** – Run the script easily inside a Jupyter Notebook with minimal setup.
+
+---
+
+## 🔧 Technologies & Libraries Used
+
+- **Python 3.x**
+- **Selenium** – For automating browser interactions and rendering JavaScript.
+- **BeautifulSoup4** – For parsing HTML and extracting listing data.
+- **Pandas** – For storing and exporting data in CSV format.
+- **ChromeDriver** – Required to render Housing.com pages with Selenium.
+
+---
+
+## 📂 Features & Workflow
+
+1. User provides the **city name** (e.g., `Mumbai`, `Pune`, `Bangalore`).
+2. The scraper builds the appropriate Housing.com rent URL.
+3. Selenium opens the page, scrolls down to load listings, and collects:
+   - 🏠 **Title**
+   - 💰 **Price**
+   - 📍 **Location**
+   - 🔗 **Link to property**
+4. Data is extracted using BeautifulSoup.
+5. Final output is saved as: `housing_<city>_rent.csv`.
+
+---
+
+## 🚀 How to Run the Notebook
+
+1. 🔽 **Download ChromeDriver**
+   - Find your browser version at `chrome://settings/help`
+   - Download matching version from: [https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)
+   - Place `chromedriver.exe` in your notebook folder or system PATH
+
+2. ✅ **Install Required Packages**
+   ```bash
+   pip install selenium beautifulsoup4 pandas
+
+3. ▶️ Run the Notebook Cells
+Enter the city when prompted
+Wait for data extraction to complete
+Find your file: housing_<city>_rent.csv
+
+4. 📌 Example Output (CSV Format)
+Title	  Price	  Location	  Link
+1 BHK Apartment in Andheri	  ₹25,000	  Andheri, Mumbai	  https://housing.com/rent/property-details/
+2 BHK Flat in Kharadi	  ₹18,000	  Kharadi, Pune	  https://housing.com/rent/property-details/
 
 
-# Description of the Project
-The Indian government offers a wide range of programs in various sectors, but the information is frequently dispersed and hard to find in one location.
-This endeavor seeks to:
-
-Use public portals to scrape Indian government schemes.
-
-Use Pandas DataFrames to organize them in a structured manner.
-
-Provide simple options for searching and filtering (future enhancement).
-
-
-# Attributes:
-Extracts General Schemes for you from india.gov.in.
-
-Extracts Scheme Names and links.
-
-Automatically cleans truncated URLs.
-
-Categorizes the schemes by department (Currently: General).
-
-More departments (tell us more, e.g. Education, Agriculture, Social Justice) coming soon.
-
-Next: Filtering, exporting to CSV/Excel, interactive web UI.
-
-
-# Technologies Implemented:
-Python
-
-BeautifulSoup
-
-Pandas
-
-Jupyter Notebook
-
-
-# Future Scope:
-Scrape schemes from multiple departments.
-
-Provide filtering and search functionalities.
-
-Export results to CSV or Excel.
-
-Build a user-friendly web interface.
-
-
-# Acknowledgements:
-India.gov.in — Official Indian Government Portal
-
-
-# Contributions are welcome!, Feel free to open an issue or submit a pull request.
+⚠️ Disclaimer
+This project is intended strictly for educational purposes.
+Scraping Housing.com or any commercial website without permission may violate their terms of service.
+Always use scrapers responsibly and limit your requests to avoid overwhelming their servers.
